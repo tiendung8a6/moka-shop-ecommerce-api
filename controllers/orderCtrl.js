@@ -32,7 +32,6 @@ export const createOrderCtrl = asyncHandler(async (req, res) => {
 
   //Get the payload(customer, orderItems, shipppingAddress, totalPrice);
   const { orderItems, shippingAddress, totalPrice } = req.body;
-  console.log(req.body);
   //Find the user
   const user = await User.findById(req.userAuthId);
   //Check if user has shipping address
