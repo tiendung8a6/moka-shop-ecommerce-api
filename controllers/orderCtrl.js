@@ -208,7 +208,6 @@ export const getOrderStatsCtrl = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 export const deleteOrderCtrl = asyncHandler(async (req, res) => {
   await Order.findByIdAndDelete(req.params.id);
-  console.log("==============",req.params.id )
   res.json({
     status: "success",
     message: "order deleted successfully",

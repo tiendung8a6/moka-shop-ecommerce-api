@@ -11,7 +11,6 @@ export const createProductCtrl = asyncHandler(async (req, res) => {
   const { name, description, category, sizes, colors, price, totalQty, brand } =
     req.body;
   const convertedImgs = req.files.map((file) => file?.path);
-  console.log("=====",convertedImgs)
   //Product exists
   const productExists = await Product.findOne({ name });
   if (productExists) {
@@ -120,7 +119,6 @@ export const getProductsCtrl = asyncHandler(async (req, res) => {
   //pagination
   //page
   const page = parseInt(req.query.page) ? parseInt(req.query.page) : 1;
-  console.log("============page", page)
   //limit
   const limit = parseInt(req.query.limit) ? parseInt(req.query.limit) : 10;
   //startIdx
